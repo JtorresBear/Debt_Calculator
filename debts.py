@@ -13,6 +13,7 @@ class Debt:
     
 
 #fix this 
+#still needs fixing. 
 def custom_json(obj):
     if isinstance(obj, complex):
         return {'__complex__': True, 'real': obj.real, 'imag': ["this","that","the other"]}
