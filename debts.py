@@ -1,12 +1,15 @@
 
 
 class Debt:
-    def __init__(self,name,total, monthly_payment, target_payment):
+    def __init__(self,name,total, monthly_payment, target_payment,months_left):
         self.name = name
         self.total = total
         self.monthly_payment = monthly_payment
         self.target_payment = target_payment
-        self.months_left = 5
+        self.months_left = months_left
+
+    def months_left_with_monthly_payment(self):
+        return int(self.total.replace(',',""))/int(self.monthly_payment.replace(',',""))
 
     def __repr__(self):
         return f"{self.name} has a Total Debt: {self.total}\nMonthly_payment: {self.monthly_payment}.\nWith target payment of {self.target_payment} your debt will be settled in {self.months_left} months"
