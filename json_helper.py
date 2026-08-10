@@ -11,4 +11,9 @@ def json_defaults(obj):
 
 def json_object_hook(json_dict):
     if '__Debt__' in json_dict:
-        return
+        return debts.Debt(json_dict['name'],
+                          json_dict['total'],
+                          json_dict['monthly_payment'],
+                          json_dict['target_payment'],
+                          json_dict['months_left'])
+    return
