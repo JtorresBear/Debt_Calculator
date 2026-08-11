@@ -16,4 +16,4 @@ def json_object_hook(json_dict):
                           json_dict['monthly_payment'],
                           json_dict['target_payment'],
                           json_dict['months_left'])
-    return
+    return json_dict

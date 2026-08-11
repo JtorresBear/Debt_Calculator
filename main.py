@@ -21,9 +21,14 @@ random_arr4 = {"debt": test_debt, "lists_of_lists":[random_arr,random_arr2,rando
 def main():
     test_debt = debts.Debt("Firstmark","31,000","500","600",5)
     #print(test_debt)
-    is_running = False
+    is_running = True
     while is_running:
-        print("is running")
+        print("please input 1, 2 or 3")
+        inp = input("press 1")
+
+        if inp == "1":
+            is_running = False
+    
     str_of_json_dump = json.dumps(test_debts,indent=1,default=json_helper.json_defaults)
     #print(str_of_json_dump)
     m = test_debt.months_left_with_monthly_payment()
