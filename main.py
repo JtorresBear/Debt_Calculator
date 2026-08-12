@@ -19,21 +19,32 @@ random_arr4 = {"debt": test_debt, "lists_of_lists":[random_arr,random_arr2,rando
 
 
 def main():
+
+    str1 = "1f"
+    try:
+        int1 = int(str1)
+    except:
+        print("didn't work")
+
     test_debt = debts.Debt("Firstmark","31,000","500","600",5)
     #print(test_debt)
     is_running = True
-    while is_running:
+    """ while is_running:
         print("please input 1, 2 or 3")
         inp = input("press 1")
+        if isinstance(inp,str):
+            print("is a string")
+        if isinstance(inp,int):
+            print("an int or also an int. ")
 
         if inp == "1":
-            is_running = False
+            is_running = False  """
     
     str_of_json_dump = json.dumps(test_debts,indent=1,default=json_helper.json_defaults)
     #print(str_of_json_dump)
     m = test_debt.months_left_with_monthly_payment()
     objects = json.loads(str_of_json_dump,object_hook=json_helper.json_object_hook)
-    print(objects)
+    #print(objects)
     
 
 main()
