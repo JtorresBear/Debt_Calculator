@@ -31,11 +31,8 @@ def load_objects():
     
 
 def save_objects(debts):
-    if not debts:
-        return
     path = Path("debts.json")
-    if not path.exists():
-        path.touch()
+    
     with open(path,'w') as json_f:
         json.dump(debts,json_f,default=json_defaults)
     
