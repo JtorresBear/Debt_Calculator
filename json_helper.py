@@ -1,4 +1,6 @@
 import debts
+import json
+from pathlib import Path
 
 def json_defaults(obj):
     if isinstance(obj,debts.Debt):
@@ -17,3 +19,24 @@ def json_object_hook(json_dict):
                           json_dict['target_payment'],
                           json_dict['interest'])
     return json_dict
+
+
+def load_objects():
+    path = Path("debts.json")
+    if not path.exists():
+        return []
+    with open(path,'r') as json_f:
+        debts = json.load(json_f,object_hook=json_object_hook)
+    return debts
+    
+
+def save_objects(debts):
+    if not debts:
+        return
+    path = Path("debts.json")
+    if not path.exists():
+        path.touch()
+    with open(path,'w') as json_f:
+        json.dump(debts,json_f,default=json_defaults)
+    
+
