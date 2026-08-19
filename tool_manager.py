@@ -79,7 +79,7 @@ def update_debt(debt: debts.Debt):
                 return
             case "2":
                 mon_payment = input_loop("your monthly payment")
-                debt.monthly_payment
+                debt.monthly_payment = mon_payment
                 print(debt)
                 return
             case "3":
