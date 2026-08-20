@@ -1,6 +1,5 @@
 
 import tool_manager
-from pathlib import Path
 import json_helper
 import os
 
@@ -12,7 +11,7 @@ def main():
     try:
         main_loop(total_debts,kill_count)
     except SystemExit:
-        json_helper.save_objects(total_debts)
+        pass
     json_helper.save_objects(total_debts)
 
 def main_loop(total_debts,kill_count):

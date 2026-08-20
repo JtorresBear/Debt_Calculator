@@ -19,7 +19,7 @@ class Debt:
             total = total + monthly_interest - self.monthly_payment
             monthly_interest = total * monthly_interest_rate
             mon_count +=1
-        return f"You'll have {mon_count} left with your monthly payment of {self.monthly_payment}"
+        return f"You'll have {mon_count} months left with your monthly payment of {self.monthly_payment}"
 
     def months_left_with_target_payment(self):
         total = self.total
@@ -32,7 +32,7 @@ class Debt:
             total = total + monthly_interest - self.target_payment
             monthly_interest = total * monthly_interest_rate
             mon_count +=1
-        return f"You'll have {mon_count} left with your target monthly payment of {self.target_payment}"
+        return f"You'll have {mon_count} months left with your target monthly payment of {self.target_payment}"
         
 
     def __repr__(self):
