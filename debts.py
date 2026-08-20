@@ -33,8 +33,16 @@ class Debt:
             monthly_interest = total * monthly_interest_rate
             mon_count +=1
         return f"You'll have {mon_count} months left with your target monthly payment of {self.target_payment}"
-        
+
+    def make_payment(self,payment):
+        if payment < self.monthly_payment:
+            raise ValueError("It cannot be less than your monthly payment")
+        self.total = self.total - payment
+        return
+
 
     def __repr__(self):
+        if self.total <= 0:
+            return f"{self.name} is paid off and can be deleted when you want. \nMonthly payment: {self.monthly_payment}.\nTarget payment: {self.target_payment}\n0 months left of payment" 
         return f"{self.name} has a Total Debt: {self.total}\nMonthly payment: {self.monthly_payment}.\nTarget payment: {self.target_payment}\n{self.months_left_with_monthly_payment()}\n{self.months_left_with_target_payment()}"
     
