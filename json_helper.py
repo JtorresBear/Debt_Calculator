@@ -21,8 +21,7 @@ def json_object_hook(json_dict):
     return json_dict
 
 
-def load_objects():
-    path = Path("debts.json")
+def load_objects(path = Path("debts.json")):
     if not path.exists():
         return []
     with open(path,'r') as json_f:
@@ -30,8 +29,7 @@ def load_objects():
     return debts
     
 
-def save_objects(debts):
-    path = Path("debts.json")
+def save_objects(debts, path=Path("debts.json")):
     
     with open(path,'w') as json_f:
         json.dump(debts,json_f,default=json_defaults)

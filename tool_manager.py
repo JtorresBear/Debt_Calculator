@@ -106,6 +106,8 @@ def update_debt(debt: debts.Debt):
                     try:
                         debt.make_payment(payment)
                         pretty_print(debt)
+                        if debt.total == 0:
+                            print("CONTGRATULATIONS YOU PAID OFF THE DEBT")
                         return
                     except ValueError as e:
                         print(e)
