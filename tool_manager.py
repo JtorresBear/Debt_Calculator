@@ -1,7 +1,7 @@
 import os
 import debts
 
-def add_dept():
+def add_debt():
     print("Name of your debt")
     name = input()
 
