@@ -43,7 +43,7 @@ The project includes unit tests for the debt calculations, payment behavior, and
 Run all tests with:
 
 ```bash
-#python3 -m unittest
+python3 -m unittest
 ```
 
 ## What I Learned
