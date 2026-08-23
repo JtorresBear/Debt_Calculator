@@ -1,4 +1,4 @@
-# Debt Calculator
+# Debt Payoff Estimator
 
 ## About
 
